@@ -1,0 +1,41 @@
+'use client';
+
+import React from 'react';
+import { BRAND_INFO } from '@/data/siteData';
+import { MessageCircle } from 'lucide-react';
+
+export default function WhatsAppFloat() {
+  const waUrl = `https://wa.me/${BRAND_INFO.whatsappNumber}?text=${encodeURIComponent(
+    'Halo Gibran Interior, saya ingin konsultasi dan tanya estimasi custom furniture untuk rumah saya.'
+  )}`;
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+      {/* Tooltip / Hint on desktop */}
+      <a
+        href={waUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden md:flex items-center gap-2 bg-white text-stone-800 text-xs font-semibold py-2 px-3.5 rounded-full shadow-lg border border-stone-200 hover:bg-stone-50 transition-all hover:scale-105"
+      >
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <span>Konsultasi Cepat via WhatsApp</span>
+      </a>
+
+      {/* Main WhatsApp Round Button */}
+      <a
+        href={waUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat WhatsApp Gibran Interior"
+        className="relative group bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center ring-4 ring-[#25D366]/20"
+      >
+        <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8" />
+        <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+        </span>
+      </a>
+    </div>
+  );
+}
