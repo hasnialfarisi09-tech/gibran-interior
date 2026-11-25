@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BRAND_INFO } from '@/data/siteData';
-import { Calculator, Check, ArrowRight, MessageCircle } from 'lucide-react';
+import { Calculator, Check, MessageCircle } from 'lucide-react';
 
 interface FurnitureType {
   id: string;

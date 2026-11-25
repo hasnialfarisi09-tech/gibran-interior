@@ -94,7 +94,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-slate-400">
               {SERVICES.map((srv) => (
                 <li key={srv.id}>
-                  <a
+                  <Link
                     href="/#layanan"
                     className="hover:text-white transition-colors flex items-center justify-between group"
                   >
@@ -102,7 +102,7 @@ export default function Footer() {
                     <span className="text-[11px] text-slate-500 group-hover:text-[#c5a059] transition-colors">
                       Custom &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="pt-2 border-t border-white/10">

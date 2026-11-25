@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { CLIENT_PROJECTS, GALLERY_CATEGORIES, ClientProject } from '@/data/clientGalleryData';
+import { CLIENT_PROJECTS, GALLERY_CATEGORIES } from '@/data/clientGalleryData';
 import { BRAND_INFO } from '@/data/siteData';
 import { Camera, MapPin, ArrowRight, MessageCircle, Sparkles, ExternalLink } from 'lucide-react';
 

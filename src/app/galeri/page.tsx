@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, Suspense, useEffect } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { CLIENT_PROJECTS, GALLERY_CATEGORIES, ClientProject } from '@/data/clientGalleryData';
@@ -19,18 +19,18 @@ import {
 
 function GalleryContent() {
   const searchParams = useSearchParams();
-  const initialCategory = searchParams.get('kategori') || 'all';
-
-  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
+  const queryCat = searchParams.get('kategori');
+  const [prevQueryCat, setPrevQueryCat] = useState<string | null>(queryCat);
+  const [selectedCategory, setSelectedCategory] = useState<string>(queryCat || 'all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [displayCount, setDisplayCount] = useState<number>(12);
-  
-  useEffect(() => {
-    const cat = searchParams.get('kategori');
-    if (cat) {
-      setSelectedCategory(cat);
+
+  if (queryCat !== prevQueryCat) {
+    setPrevQueryCat(queryCat);
+    if (queryCat) {
+      setSelectedCategory(queryCat);
     }
-  }, [searchParams]);
+  }
 
   // Expanded client cards that show ALL photos instead of just 5
   const [expandedClientIds, setExpandedClientIds] = useState<Set<string>>(new Set());

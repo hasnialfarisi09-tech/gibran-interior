@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { BRAND_INFO } from '@/data/siteData';
 import { Menu, X, Phone, MapPin, ChevronDown, Sparkles } from 'lucide-react';
 
